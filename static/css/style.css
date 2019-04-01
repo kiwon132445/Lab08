@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Germania+One');
+header{
+    height: 128px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    font-size: 14pt;
+    z-index: 1;
+    font-family: 'Germania One', cursive;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 128px;
+}
+#headLeft{
+    float: left;
+    height: 100%;
+}
+#headLeft img{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+#navbar{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#navList{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+#navList li{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    cursor: pointer;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+
+#main1{
+    height: 512px;
+    width: 100%;
+    left: 0px;
+    padding-top: 128px;
+    font-size: 40pt;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+
+
