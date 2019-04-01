@@ -38,6 +38,9 @@ header{
     flex-direction: column;
     justify-content: center;
 }
+#menuButton{
+    display: none;
+}
 #navList{
     list-style: none;
     display: flex;
@@ -48,6 +51,26 @@ header{
     padding-right: 0.5em;
     cursor: pointer;
 }
+
+#menuResp {
+    display: none;
+    background-color: black;
+    color: white;
+    left: 0px;
+    width:100%;
+    text-align: center;
+}
+
+#menuResp ul{
+    list-style: none;
+    font-size: 14pt;
+    font-family: 'Germania One', cursive;
+}
+
+#navListResp li{
+    cursor: pointer;
+}
+
 html{
     height: 100%;
 }
@@ -61,11 +84,38 @@ body{
     left: 0px;
     padding-top: 128px;
     font-size: 40pt;
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1;
 }
+
+@media screen and (max-width: 728px){
+    #menuButton{
+        display: block;
+        cursor: pointer;
+        float: right;
+        
+    }
+    #navList{
+        display: none;
+    }
+    #menuResp{
+        display: block;
+        position: absolute;
+        top:0px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    
+}
+
+
+
+
+
+
 
 
 

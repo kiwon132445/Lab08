@@ -3,22 +3,27 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
     
+</head>
+
 <body>
+    <script src="JS/responsive-functions.js"></script>
     <div id="container">
         <header id="header">
             <div id="headLeft">
                 <img src="images/Chrono_Trigger_Logo.png">
             </div>
             <nav id="navbar">
-                <ul id="navList">
-                    <li>Home</li>
-                    <li>Timelines</li>
-                    <li>Characters</li>
-                    <li>Bosses</li>
-                    <li>Contact</li>
-                </ul>
+                <img src="images/menu.png" id="menuButton">
+                <div class="menu">
+                    <ul id="navList">
+                        <li>Home</li>
+                        <li>Timelines</li>
+                        <li>Characters</li>
+                        <li>Bosses</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
             </nav>
             <script>
                 window.onscroll = function() {myFunction()};
@@ -35,6 +40,16 @@
                 }
             </script>
         </header>
+        
+        <div id="menuResp">
+                <ul id="navListResp">
+                    <li>Home</li>
+                    <li>Timelines</li>
+                    <li>Characters</li>
+                    <li>Bosses</li>
+                    <li>Contact</li>
+                </ul>
+        </div>
         
         <div id="main1" style="background-image: url('images/ct-camp.jpg')">
             
