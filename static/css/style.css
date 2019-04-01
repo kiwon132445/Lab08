@@ -12,16 +12,8 @@ header{
     color: white;
     font-size: 14pt;
     z-index: 1;
-    font-family: 'Germania One', cursive;
 }
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.sticky + .content {
-  padding-top: 128px;
-}
+
 #headLeft{
     float: left;
     height: 100%;
@@ -55,6 +47,7 @@ header{
 #menuResp {
     display: none;
     background-color: black;
+    height: 128px;
     color: white;
     left: 0px;
     width:100%;
@@ -64,7 +57,6 @@ header{
 #menuResp ul{
     list-style: none;
     font-size: 14pt;
-    font-family: 'Germania One', cursive;
 }
 
 #navListResp li{
@@ -76,6 +68,7 @@ html{
 }
 body{
     height: 100%;
+    font-family: 'Germania One', cursive;
 }
 
 #main1{
@@ -105,6 +98,14 @@ body{
         position: absolute;
         top:0px;
     }
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .sticky + #menuResp {
+        padding-top: 128px;
+    }       
 }
 
 @media screen and (max-width: 400px){
