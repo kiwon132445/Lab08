@@ -25,6 +25,7 @@ app.get('/', function (req, res) {
 
 app.use('/js', express.static('static/js'))
 app.use('/css', express.static('static/css'))
+app.use('/images', express.static('static/images'))
 
 app.get('/ajax-GET', function (req, res) {
 
@@ -36,7 +37,7 @@ app.get('/ajax-GET', function (req, res) {
 
 })
 
-app.get('/ajax-GET-list', function (req, res) {
+app.get('/ajax-GET-list1', function (req, res) {
 
     //res.setHeader('Content-Type', 'application/json');
     //console.log(req.query['format']);
@@ -46,7 +47,31 @@ app.get('/ajax-GET-list', function (req, res) {
     if(formatOfResponse == 'html-list') {
 
         res.setHeader('Content-Type', 'text/html');
-        dataList = lists.getHTML();
+        dataList = lists.getHTML1();
+        res.send(dataList);
+
+    } else if(formatOfResponse == 'json-list') {
+
+        res.setHeader('Content-Type', 'application/json');
+        dataList = lists.getJSON1();
+        res.send(dataList);
+
+    } else {
+        res.send({msg: 'Wrong format!'});
+    }
+});
+
+app.get('/ajax-GET-list2', function (req, res) {
+
+    //res.setHeader('Content-Type', 'application/json');
+    //console.log(req.query['format']);
+    let formatOfResponse = req.query['format'];
+    let dataList = null;
+
+    if(formatOfResponse == 'html-list') {
+
+        res.setHeader('Content-Type', 'text/html');
+        dataList = lists.getHTML2();
         res.send(dataList);
 
     } else if(formatOfResponse == 'json-list') {
@@ -82,7 +107,7 @@ app.use(function (req, res, next) {
 })
 
 // RUN SERVER
-let port = 8000;
+let port = 3030;
 app.listen(port, function () {
     console.log('App listening on port ' + port + '!');
 })

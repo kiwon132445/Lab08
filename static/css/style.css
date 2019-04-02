@@ -91,7 +91,6 @@ body{
         display: block;
         cursor: pointer;
         float: right;
-        
     }
     #navList{
         display: none;
@@ -101,10 +100,6 @@ body{
         position: fixed;
         top: -128px;
     }
-}
-
-@media screen and (max-width: 400px){
-    
 }
 
 
