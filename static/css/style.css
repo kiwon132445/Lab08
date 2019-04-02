@@ -76,11 +76,14 @@ body{
     width: 100%;
     left: 0px;
     padding-top: 128px;
-    font-size: 40pt;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1;
+}
+
+#main2{
+    font-size: 40pt;
 }
 
 @media screen and (max-width: 728px){
@@ -95,7 +98,7 @@ body{
     }
     #menuResp{
         display: block;
-        position: absolute;
+        position: fixed;
         top: -128px;
     }
 }
