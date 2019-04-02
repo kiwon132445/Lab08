@@ -15,6 +15,13 @@ $(menuButton).click(function (event) {
         }
     });
     
+    // CLEAR THE PAGE
+    $('.home').click(function(e) {
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+        $("#main2").html("");
+    });
+    
     // GET A LIST OF TIMELINES FROM THE SERVER AS HTML DATA
     $('.timelines').click(function(e) {
 
@@ -64,7 +71,7 @@ $(menuButton).click(function (event) {
     });
 
 
-    // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
+    // GET A LIST OF BOSSES FROM THE SERVER AS JSON DATA
     $('.bosses').click(function(e) {
 
         // don't allow the anchor to visit the link
@@ -80,7 +87,36 @@ $(menuButton).click(function (event) {
                 var div = $("#main2");
                 let htmlStr = "<ul>";
                 for(let i = 0; i < data.length; i++) {
-                    htmlStr += "<li>" + data[i] + "</li>";
+                    htmlStr += "<li><div>" + "<img src='"+ data[i].imagePath + "'>" + "<p>" + data[i].description + "</p>" + "</div></li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#p1").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+    
+    // GET A LIST OF NPC's FROM THE SERVER AS JSON DATA
+    $('.npc').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list2",
+            dataType: "json",
+            type: "GET",
+            data: { format: "json-list"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#main2");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li><div>" + "<img src='"+ data[i].imagePath + "'>" + "<p>" + data[i].description + "</p>" + "</div></li>";
                 }
                 htmlStr += "</ul>";
                 div.html(htmlStr);

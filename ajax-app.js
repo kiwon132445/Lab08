@@ -67,7 +67,7 @@ app.get('/ajax-GET-list2', function (req, res) {
     } else if(formatOfResponse == 'json-list') {
 
         res.setHeader('Content-Type', 'application/json');
-        dataList = lists.getJSON();
+        dataList = lists.getJSON2();
         res.send(dataList);
 
     } else {
