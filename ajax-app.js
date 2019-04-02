@@ -1,25 +1,15 @@
-// https://expressjs.com/en/guide/routing.html
-
-
 // REQUIRES
 const lists = require('./core/data');
 const express = require('express');
-// as of Express 4, you need this:
-// https://www.npmjs.com/package/body-parser
+
 const bodyParser = require('body-parser');
 const app = express();
-// https://www.npmjs.com/package/jsdom
+
 const { JSDOM } = require('jsdom');
 const fs = require("fs");
 
 app.get('/', function (req, res) {
     let doc = fs.readFileSync('./static/index.html', "utf8");
-    //console.log(JSDOM);
-    //let dom = new JSDOM(doc);
-    //let $ = require("jquery")(dom.window);
-
-
-    //res.send(dom.serialize());
     res.send(doc);
 });
 
